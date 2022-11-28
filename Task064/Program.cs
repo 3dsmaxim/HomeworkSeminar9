@@ -13,10 +13,10 @@ int number = int.Parse(Console.ReadLine());
 
 void NumberString(int start, int num)
 {
-    Console.Write($"{start}");
+    Console.Write($"{num}");
     if (start == num) return;
     Console.Write($", ");
-    NumberString(start +1, num);
+    NumberString(start , num - 1);
     
 }
 NumberString(1, number);

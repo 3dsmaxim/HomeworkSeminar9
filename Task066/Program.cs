@@ -15,13 +15,17 @@ string[] textT = text.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 int numberStart = int.Parse(textT[0]);
 int numberEnd = int.Parse(textT[1]);
 
-void NumberString(int start, int end)
+void NumberString(int start, int end, int stop)
 {
-    Console.Write($"{start}");
-    if (start == end) return;
-    Console.Write($", ");
-    NumberString(start +1, end);
+    
+    if (stop == end) 
+    {
+        Console.Write($"{start}");
+    return;
+    }
+
+    NumberString(start + end, end -1, stop);
     
 }
-NumberString(numberStart, numberEnd);
+NumberString(numberStart, numberEnd, numberStart);
 
